@@ -57,10 +57,13 @@ public class ApplicationController {
     @PostMapping
     @CrossOrigin
     public ResponseEntity<?> applyForJob(@RequestParam("FirstName") String firstName, @RequestParam("LastName") String lastName,
+                                         @RequestParam("Username") String username, @RequestParam("Email") String email,
+                                         @RequestParam("Password") String password, @RequestParam("Address") String address,
+                                         @RequestParam("PhoneNumber") String phoneNumber,
                                          @RequestParam("Qualifications") Qualifications qualifications, @RequestParam("CityId") UUID cityId,
                                          @RequestParam("CV") MultipartFile cv, @RequestParam("CL") MultipartFile cl){
         try {
-            ApplicationInputDTO dto = new ApplicationInputDTO(firstName, lastName, qualifications, cityId);
+            ApplicationInputDTO dto = new ApplicationInputDTO(firstName, lastName, qualifications, cityId,username, email,password,address,phoneNumber);
             return new ResponseEntity<>(applicationService.createApplication(dto, cv, cl), HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();

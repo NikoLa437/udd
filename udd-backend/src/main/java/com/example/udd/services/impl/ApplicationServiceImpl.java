@@ -70,6 +70,6 @@ public class ApplicationServiceImpl {
     private Application mapApplicationDTOtoApplication(ApplicationInputDTO dto){
         CV newCv= new CV("test");
         CoverLetter newCL = new CoverLetter("test1");
-        return new Application(dto.FirstName,dto.LastName, cityRepository.getById(dto.CityId), dto.Qualifications, newCv, newCL);
+        return new Application(dto.FirstName,dto.LastName, cityRepository.getById(dto.CityId), dto.Qualifications, newCv, newCL, dto.Username, dto.Password,dto.Email, dto.Address, dto.PhoneNumber);
     }
 }

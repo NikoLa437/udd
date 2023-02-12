@@ -21,6 +21,18 @@ public class Application {
     @Column(nullable = false)
     private String lastName;
 
+    @Column(nullable = false)
+    private String username;
+
+    @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false)
+    private String password;
+    @Column(nullable = false)
+    private String address;
+    @Column(nullable = false)
+    private String phoneNumber;
     @ManyToOne
     private City city;
 
@@ -33,7 +45,8 @@ public class Application {
     @OneToOne(cascade = CascadeType.ALL)
     private CoverLetter coverLetter;
 
-    public Application(String firstName, String lastName, City city, Qualifications qualifications, CV cv, CoverLetter coverLetter) {
-        this(UUID.randomUUID(), firstName, lastName, city, qualifications, cv, coverLetter);
+    public Application(String firstName, String lastName, City city, Qualifications qualifications, CV cv, CoverLetter coverLetter,
+                       String userName, String password, String email, String address, String phoneNumber) {
+        this(UUID.randomUUID(), firstName, lastName, userName, email, password, address, phoneNumber, city, qualifications, cv, coverLetter);
     }
 }
