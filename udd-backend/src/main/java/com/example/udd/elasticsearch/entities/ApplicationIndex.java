@@ -24,25 +24,25 @@ public class ApplicationIndex {
     @Field(type = FieldType.Text)
     private String id;
 
-    @Field(type = FieldType.Text)
+    @Field(type = FieldType.Text, analyzer = "serbian",searchAnalyzer = "serbian")
     private String firstName;
 
-    @Field(type = FieldType.Text)
+    @Field(type = FieldType.Text, analyzer = "serbian",searchAnalyzer = "serbian")
     private String lastName;
 
-    @Field(type = FieldType.Text)
+    @Field(type = FieldType.Text, analyzer = "serbian",searchAnalyzer = "serbian")
     private Qualifications qualifications;
 
-    @Field(type = FieldType.Text)
+    @Field(type = FieldType.Text, analyzer = "serbian",searchAnalyzer = "serbian")
     private String cvContent;
 
-    @Field(type = FieldType.Text)
+    @Field(type = FieldType.Text, analyzer = "serbian",searchAnalyzer = "serbian")
     private String coverLetterContent;
 
     @GeoPointField
     @JsonFormat(shape = JsonFormat.Shape.OBJECT)
     private GeoPoint location;
 
-    @Field(type = FieldType.Text)
+    @Field(type = FieldType.Text, analyzer = "serbian",searchAnalyzer = "serbian")
     private String city;
 }
