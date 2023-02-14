@@ -1,6 +1,7 @@
 package com.example.udd.controller;
 
 import com.example.udd.entities.DTO.ApplicationInputDTO;
+import com.example.udd.entities.DTO.GeoLocationSearchDTO;
 import com.example.udd.entities.DTO.Query;
 import com.example.udd.entities.Qualifications;
 import com.example.udd.services.impl.ApplicationServiceImpl;
@@ -19,11 +20,22 @@ import java.util.UUID;
 public class SearchController {
     @Autowired
     private SearchServiceImpl searchService;
-    @PostMapping
+    @PostMapping("/complex")
     @CrossOrigin
-    public ResponseEntity<?> applyForJob(@RequestBody List<Query> complexQuery){
+    public ResponseEntity<?> complexSearch(@RequestBody List<Query> complexQuery){
         try {
-            return new ResponseEntity<>(searchService.complexSearch(complexQuery), HttpStatus.CREATED);
+            return new ResponseEntity<>(searchService.complexSearch(complexQuery), HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PostMapping("/geolocation")
+    @CrossOrigin
+    public ResponseEntity<?> geoLocationSearch(@RequestBody GeoLocationSearchDTO geoLocationSearchDTO){
+        try {
+            return new ResponseEntity<>(searchService.geoLocationSearch(geoLocationSearchDTO), HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
