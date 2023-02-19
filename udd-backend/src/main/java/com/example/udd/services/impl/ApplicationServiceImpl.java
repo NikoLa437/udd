@@ -10,6 +10,8 @@ import com.example.udd.repository.ApplicationRepository;
 import com.example.udd.repository.CityRepository;
 import com.example.udd.repository.ElasticSearchRepository;
 import com.example.udd.services.impl.utils.FileUtilServiceImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.elasticsearch.common.geo.GeoPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +23,8 @@ import java.util.UUID;
 
 @Service
 public class ApplicationServiceImpl {
+    private static final Logger logger = LogManager.getLogger(ApplicationServiceImpl.class);
+
     private static final String CV_FOLDER_PATH = "/cv";
     private static final String CL_FOLDER_PATH = "/cover_letter";
     @Autowired
@@ -56,6 +60,7 @@ public class ApplicationServiceImpl {
         ApplicationIndex applicationIndex = mapApplicationToApplicationIndex(application, cvContent, cLContent);
 
         elasticSearchRepository.save(applicationIndex);
+        logger.info(String.format("APPLY_FOR_JOB %s %s %s [%s]", application.getFirstName(), application.getLastName(), application.getId(), application.getCity().getName()));
 
         return application.getId();
     }
