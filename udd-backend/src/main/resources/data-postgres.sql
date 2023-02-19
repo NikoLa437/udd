@@ -1,5 +1,9 @@
-INSERT INTO city (id,name,latitude,longitude) VALUES ('1f787b29-cb11-49a3-864e-21231bc22007','Zrenjanin',45.3786,20.3995);
-INSERT INTO city (id,name,latitude,longitude) VALUES ('1f787b29-cb11-49a3-864e-21231bc22008','Kraljevo',43.7259,20.6896);
+INSERT INTO city (id,name,latitude,longitude) VALUES ('1f787b29-cb11-49a3-864e-21231bc22016','Beograd',44.787197, 20.457273);
+INSERT INTO city (id,name,latitude,longitude) VALUES ('1f787b29-cb11-49a3-864e-21231bc22013','Novi Sad',45.267136, 19.833549);
+INSERT INTO city (id,name,latitude,longitude) VALUES ('1f787b29-cb11-49a3-864e-21231bc22014','Kragujevac',44.01667, 20.91667);
+INSERT INTO city (id,name,latitude,longitude) VALUES ('1f787b29-cb11-49a3-864e-21231bc22015','Cacak', 43.89139, 20.34972);
+INSERT INTO city (id,name,latitude,longitude) VALUES ('1f787b29-cb11-49a3-864e-21231bc22007','Zrenjanin', 45.3786, 20.3995);
+INSERT INTO city (id,name,latitude,longitude) VALUES ('1f787b29-cb11-49a3-864e-21231bc22008','Kraljevo', 43.7259,20.6896);
 INSERT INTO city (id,name,latitude,longitude) VALUES ('1f787b29-cb11-49a3-864e-21231bc22009','Leskovac',42.9976,21.9445);
 INSERT INTO city (id,name,latitude,longitude) VALUES ('1f787b29-cb11-49a3-864e-21231bc22010','Užice',43.8582,19.8441);
 INSERT INTO city (id,name,latitude,longitude) VALUES ('1f787b29-cb11-49a3-864e-21231bc22011','Jagodina',43.9791,21.2583);

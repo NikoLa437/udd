@@ -2,6 +2,8 @@ import React from "react";
 import CreateApplicationForm from "../components/application/CreateApplicationForm";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import ComplexSearchForm from "../components/search/ComplexSearchForm";
+import CitySearchForm from "../components/search/CitySearchForm";
 
 const HomePage = () => {
 	return (
@@ -16,12 +18,12 @@ const HomePage = () => {
 				</Tab>
 				<Tab eventKey="search" title="Search">
 					<div>
-						todo
+						<ComplexSearchForm></ComplexSearchForm>
 					</div>
 				</Tab>
 				<Tab eventKey="search_location" title="Search by location">
 					<div>
-						todo
+						<CitySearchForm/>
 					</div>
 				</Tab>
 			</Tabs>
